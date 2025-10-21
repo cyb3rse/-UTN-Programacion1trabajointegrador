@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Países</title>
+</head>
+<body>
+    <h1>Lista de Países</h1>
+    <table border="1">
+        <tr>
+            {% for col in encabezado %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for fila in datos %}
+        <tr>
+            {% for valor in fila %}
+            <td>{{ valor }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
