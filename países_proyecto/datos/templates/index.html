@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Países</title>
+    <title>Lista de Países</title>
 </head>
 <body>
-    <h1>Lista de Países</h1>
+    <h1>Listado de países</h1>
     <table border="1">
         <tr>
-            {% for col in encabezado %}
-            <th>{{ col }}</th>
-            {% endfor %}
+            <th>Continente</th>
+            <th>País</th>
+            <th>Población</th>
+            <th>Superficie (km²)</th>
         </tr>
-        {% for fila in datos %}
+        {% for pais in paises %}
         <tr>
-            {% for valor in fila %}
-            <td>{{ valor }}</td>
-            {% endfor %}
+            <td>{{ pais['continente'] }}</td>
+            <td>{{ pais['pais'] }}</td>
+            <td>{{ pais['poblacion'] }}</td>
+            <td>{{ pais['superficie'] }}</td>
         </tr>
         {% endfor %}
     </table>
