@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Países</title>
+</head>
+<body>
+    <h1>Listado de países</h1>
+    <table border="1">
+        <tr>
+            <th>Continente</th>
+            <th>País</th>
+            <th>Población</th>
+            <th>Superficie (km²)</th>
+        </tr>
+        {% for pais in paises %}
+        <tr>
+            <td>{{ pais['continente'] }}</td>
+            <td>{{ pais['pais'] }}</td>
+            <td>{{ pais['poblacion'] }}</td>
+            <td>{{ pais['superficie'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
