@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Países</title>
+    <title>Buscador de Países</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f8f8; padding: 30px; }
+        h1 { color: #FF9A03; }
+        form { margin-bottom: 20px; }
+        input[type="text"] {
+            padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px; background: #FF9A03; border: none; color: white;
+            border-radius: 4px; cursor: pointer;
+        }
+        button:hover { background: #e58900; }
+        table {
+            border-collapse: collapse; width: 100%; background: white;
+        }
+        th, td {
+            border: 1px solid #ddd; padding: 8px; text-align: left;
+        }
+        th { background-color: #FF9A03; color: white; }
+    </style>
 </head>
 <body>
-    <h1>Lista de Países</h1>
-    <table border="1">
+    <h1>🌎 Buscador de Países</h1>
+
+    <form method="POST">
+        <input type="text" name="busqueda" placeholder="Escribe el nombre del país...">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <table>
         <tr>
-            {% for col in encabezado %}
-            <th>{{ col }}</th>
-            {% endfor %}
+            <th>País</th>
+            <th>Población</th>
+            <th>Superficie (km²)</th>
+            <th>Continente</th>
         </tr>
-        {% for fila in datos %}
+        {% for pais in paises %}
         <tr>
-            {% for valor in fila %}
-            <td>{{ valor }}</td>
-            {% endfor %}
+            <td>{{ pais.pais }}</td>
+            <td>{{ pais.poblacion }}</td>
+            <td>{{ pais.superficie }}</td>
+            <td>{{ pais.continente }}</td>
         </tr>
         {% endfor %}
     </table>
